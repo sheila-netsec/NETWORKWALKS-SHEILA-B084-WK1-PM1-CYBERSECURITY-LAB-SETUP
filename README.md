@@ -34,13 +34,13 @@ Build an isolated cybersecurity testing lab on my own laptop, with Kali Linux as
 
 I checked for updates in VirtualBox (File > Check for Updates), downloaded the latest installer from virtualbox.org and installed it over the old version with the default options. My existing VMs were kept. The About screen confirms version 7.2.22.
 
-![VirtualBox version](screenshots/01_VirtualBox_Version_7.2.22.png)
+![VirtualBox version](01_VirtualBox_Version_7.2.22.png)
 
 ### 2. Create the NAT Network
 
 In **File > Tools > Network > NAT Networks**, I edited the existing `NatNetwork` and set the IPv4 prefix to `10.0.0.0/24` with DHCP enabled and IPv6 disabled.
 
-![NAT Network](screenshots/02_NAT_Network_10.0.0.0-24.png)
+![NAT Network](02_NAT_Network_10.0.0.0-24.png)
 
 ### 3. Attach the Kali VM to the NAT Network
 
@@ -49,19 +49,19 @@ In the Kali VM **Settings > Network > Adapter 1**:
 - Name: **NatNetwork**
 - Promiscuous Mode: **Allow All**
 
-![Kali network settings](screenshots/03_Kali_VM_Network_Settings_NatNetwork.png)
+![Kali network settings](03_Kali_VM_Network_Settings_NatNetwork.png)
 
 ### 4. Enable the shared clipboard and drag and drop
 
 In **Settings > General > Features**, I set both **Shared Clipboard** and **Drag-and-Drop** to **Bidirectional**.
 
-![Clipboard and drag and drop](screenshots/04_Kali_Clipboard_DragDrop_Bidirectional.png)
+![Clipboard and drag and drop](04_Kali_Clipboard_DragDrop_Bidirectional.png)
 
 ### 5. Share the Downloads folder from the host
 
 In **Settings > Shared Folders**, I added the Windows Downloads folder as a global shared folder named `Downloads` with **Auto-mount** enabled and full access.
 
-![Shared folder](screenshots/05_Kali_Shared_Folder_Downloads.png)
+![Shared folder](05_Kali_Shared_Folder_Downloads.png)
 
 ### 6. Set the static IP and test internet access
 
@@ -89,7 +89,7 @@ ping -c 3 google.com
 
 `eth0` shows `10.0.0.2/24`, and both pings returned replies with 0% packet loss. This confirms internet access and DNS resolution.
 
-![IP address and ping test](screenshots/06_Kali_IP_10.0.0.2_and_Internet_Ping.png)
+![IP address and ping test](06_Kali_IP_10.0.0.2_and_Internet_Ping.png)
 
 ### 7. Check the shared folder inside Kali
 
@@ -99,19 +99,19 @@ ls /media/sf_Downloads
 
 The command lists the files from my Windows Downloads folder, so the share works. (The file names in this screenshot are blurred for privacy.)
 
-![Shared folder listing](screenshots/07_Kali_Shared_Folder_Listing.png)
+![Shared folder listing](07_Kali_Shared_Folder_Listing.png)
 
 ### 8. Confirm the VM is on the NAT Network
 
 The VirtualBox Manager shows the Kali VM running with Adapter 1 on **NAT Network, 'NatNetwork'**.
 
-![VirtualBox Manager](screenshots/08_VirtualBox_Manager_Kali_on_NatNetwork.png)
+![VirtualBox Manager](08_VirtualBox_Manager_Kali_on_NatNetwork.png)
 
 ### 9. Take a snapshot
 
 I took a snapshot named **Week1 - Lab Setup Complete (10.0.0.2)** so I can restore the lab to a clean working state at any time.
 
-![Snapshot](screenshots/09_Snapshot_Week1_Lab_Setup_Complete.png)
+![Snapshot](09_Snapshot_Week1_Lab_Setup_Complete.png)
 
 ## What I learned
 
@@ -123,4 +123,4 @@ I took a snapshot named **Week1 - Lab Setup Complete (10.0.0.2)** so I can resto
 
 ## Conclusion
 
-The lab meets every requirement of the task. Kali Linux is ready as my attacking machine on an isolated NAT Network, and it has full internet access. I'm ready to build on it in the coming weeks.
+The lab meets every requirement of the task. Kali Linux is ready as my attacking machine on an isolated NAT Network, and it has full internet access. 
