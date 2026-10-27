@@ -123,4 +123,4 @@ I took a snapshot named **Week1 - Lab Setup Complete (10.0.0.2)** so I can resto
 
 ## Conclusion
 
-The lab meets every requirement of the task. Kali Linux is ready as my attacking machine on an isolated NAT Network, and it has full internet access. I'm ready to build on it in the coming weeks.
+The lab meets every requirement of the task. Kali Linux is ready as my attacking machine on an isolated NAT Network, and it has full internet access. 
